@@ -1,2 +1,0 @@
-mvn com.github.ekryd.sortpom:sortpom-maven-plugin:sort -Dsort.keepBlankLines -Dsort.predefinedSortOrder=custom_1
-mvn  -Dcheckstyle.skip=true -Dmaven.test.skip=true package
