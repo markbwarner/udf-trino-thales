@@ -1,2 +1,16 @@
+//Generate jar/zip file
 mvn com.github.ekryd.sortpom:sortpom-maven-plugin:sort -Dsort.keepBlankLines -Dsort.predefinedSortOrder=custom_1
 mvn  -Dcheckstyle.skip=true -Dmaven.test.skip=true package
+
+//Copy zip to plugin directory
+//My trino install is at:  /home/mark/Downloads/trino/trino-server-429
+once the build is complete copy the zip in the target directory to your trino install plubin dir. 
+cp thales-function-429.zip /home/mark/Downloads/trino/trino-server-429/plugin
+unzip thales-function-429.zip
+restart trino 
+
+//test UDF
+switch to the tpch/sf1 database
+SHOW FUNCTIONS LIKE '%cadp%'
+select custkey, phone, mktsegment, cadp_encrypt_char(name) as custname_enc ,name  from customer limit 50;
+
