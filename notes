@@ -8,6 +8,9 @@ once the build is complete copy the zip in the target directory to your trino in
 cp thales-function-429.zip /home/mark/Downloads/trino/trino-server-429/plugin
 unzip thales-function-429.zip
 restart trino 
+example:
+~/Downloads/trino/trino-server-429
+bin/launcher run
 
 //test UDF
 switch to the tpch/sf1 database
